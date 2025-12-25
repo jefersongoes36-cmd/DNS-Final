@@ -17,15 +17,16 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(__dirname, '.'), // raiz do projeto
+        'components': path.resolve(__dirname, 'components'), // para importar AdminDashboard mais fácil
       },
     },
     optimizeDeps: {
-      include: ['axios'], // <--- força o Vite a processar axios
+      include: ['axios'], // força Vite a processar axios
     },
     build: {
       rollupOptions: {
-        // external: ['axios'],  // Não precisamos mais dessa linha
+        external: [], // não externaliza axios
       },
     },
   };
