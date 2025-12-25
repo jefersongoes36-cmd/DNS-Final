@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       rollupOptions: {
-        external: ['axios'], // adiciona axios como externo
+        external: ['axios'],
       },
     },
   };
