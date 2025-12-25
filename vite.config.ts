@@ -20,9 +20,12 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    optimizeDeps: {
+      include: ['axios'], // <--- força o Vite a processar axios
+    },
     build: {
       rollupOptions: {
-        external: ['axios'],
+        // external: ['axios'],  // Não precisamos mais dessa linha
       },
     },
   };
